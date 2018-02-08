@@ -143,4 +143,25 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/testrole', 'HomeController@testrole')->name('testrole')->middleware('checkrole');
 ;
+// USER DASHBOARD ROUTES
+Route::get('/referrals','ReferralController@index')->name('referrals');
+Route::get('/subscription','SubscriptionController@index')->name('subscription');
+Route::get('/rewards',function(){
+    $ranks = App\Rank::all();
+    return view('rewards.index', compact('ranks'));
+})->name('rewards');
+Route::get('/payment-history',function(){
+    $user = Auth::user();
+    $wallet = App\EWallet::where('user_id', $user->id)->get()->first();
+    $transactions = App\CreditDebit::where('user_id', $user->id)->get();
+    return view('payments.history', compact('transactions', 'wallet'));
+})->name('payment.history');
+Route::get('/downline-tree','ReferralController@downline')->name('downline');
+Route::get('/gateway','HomeController@gateway');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay'); 
+Route::get('/payment/callback/{response}', 'PaymentController@callback2');
+Route::get('/register/{ref}', 'RegisterWithRefController@index')->name('register.ref');
 
+Route::post('/manual-payment','ManualPaymentController@index')->name('manual.payment');
+Route::get('/manual-payment/approve/{reference}','ManualPaymentController@approve')->name('manual.payment.approve');
