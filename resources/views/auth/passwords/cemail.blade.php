@@ -5,7 +5,7 @@
                         {{ csrf_field() }}
 
 
-              <h1>Login Form</h1>
+              <h1>Reset Password</h1>
 
 
   <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

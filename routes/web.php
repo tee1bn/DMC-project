@@ -22,10 +22,37 @@ Route::get('/admin-view', function () {
 });
 
 
-
 Route::get('/participant-view', function () {
     return view('auth/participant/user-dashboard');
 });
+
+
+
+Route::get('/login-view', function () {
+    return view('auth/clogin');
+});
+
+
+Route::get('/app-view', function () {
+    return view('auth/passwords/cemail');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
