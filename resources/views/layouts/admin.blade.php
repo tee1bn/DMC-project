@@ -4,4 +4,4 @@
 @yield('body')
 
         
-        @include('includes/admin-footer')
+        @include('includes/participant-footer')

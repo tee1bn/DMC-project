@@ -25,6 +25,19 @@ Route::get('/plain-page', function () {
 
 
 
+Route::group(array('prefix'=> '/admin'), function()
+{
+
+
+Route::get('/user-management', function () {
+    return view('auth/admin/user-management');
+})->name('user-management');
+
+
+
+
+
+});
 
 
 
@@ -34,6 +47,11 @@ Route::get('/plain-page', function () {
 
 Route::group(array('prefix'=> '/participant'), function()
 {
+
+
+Route::get('/participant-dashboard', function () {
+    return view('auth/participant/user-dashboard');
+})->name('participant-dashboard');
 
 
 
@@ -87,13 +105,6 @@ Route::get('/admin-messages', function () {
 Route::get('/admin-dashboard', function () {
     return view('auth/admin/admin-dashboard');
 })->name('admin-dashboard');
-
-
-Route::get('/participant-dashboard', function () {
-    return view('auth/participant/user-dashboard');
-})->name('participant-dashboard');
-
-
 
 
 

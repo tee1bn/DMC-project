@@ -49,7 +49,7 @@
                             <label for="phone" class="col-md-4 control-label">Phone</label>
 
                             <div>
-                                <input id="phone" type="phone" class="form-control" name="phone" value="{{ old('phone') }}" required autofocus>
+                                <input id="phone" type="phone" placeholder="E.g 2348243354657  no '+'" class="form-control" name="phone" value="{{ old('phone') }}" required autofocus>
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">

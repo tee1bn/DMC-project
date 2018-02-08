@@ -3,7 +3,7 @@
               <div class="menu_section">
                 <h3>Participant</h3>
                 <ul class="nav side-menu">
-                  <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
+                  <li><a href="{{route('participant-dashboard')}}"><i class="fa fa-home"></i> Dashboard</a></li>
 
 
                   
@@ -16,10 +16,10 @@
 
                   <li><a><i class="fa fa-edit"></i> E-Wallet <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Balance</a></li>
-                      <li><a href="#">Funds Withdrawal</a></li>
-                      <li><a href="#">Payment History</a></li>
-                      <li><a href="#">Withdrawal History</a></li>
+                      <li><a href="{{route('participant-balance')}}">Balance</a></li>
+                      <li><a href="{{route('participant-funds-withdrawal')}}">Funds Withdrawal</a></li>
+                      <li><a href="{{route('participant-payment-history')}}">Payment History</a></li>
+                      <li><a href="{{route('participant-withdrawal-history')}}">Withdrawal History</a></li>
                     </ul>
                   </li>
 
@@ -37,21 +37,14 @@
                                       <li><a href="#">Business Hub</a></li>
                                       <li><a href="#">Shop Hub</a></li>
                                       <li><a href="#">Accelerator</a></li>
-                                      <li><a href="#">Invest-4-Me</a></li>
+                                      <li><a hrefSuspend="#">Invest-4-Me</a></li>
                                       <li><a href="#">Vault</a></li>
                                       <li><a href="#">Leaderboard</a></li>
                                     </ul>
                       </li>
-                  <li><a href="#"><i class="fa fa-edit"></i> Admin Messaging</a></li>
+                  <li><a href="{{route('participant-admin-messages')}}"><i class="fa fa-edit"></i> Messages</a></li>
 
-
-                 <li><a><i class="fa fa-edit"></i>Security Settings <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                      <li><a href="#">Upline</a></li>
-                                      <li><a href="#">Downline</a></li>
-                                      <li><a href="#">Referral Commission</a></li>
-                                    </ul>
-                      </li>
+                  <li><a href="{{route('participant-security-settings')}}"><i class="fa fa-home"></i> Security Settings</a></li>
 
                  
                 </ul>
