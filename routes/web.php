@@ -17,25 +17,40 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin-view', function () {
+
+Route::get('/plain-page', function () {
+    return view('auth/participant/plain-page');
+})->name('plain-page');
+
+
+
+
+
+
+
+
+//participant menus
+
+
+Route::get('/admin-dashboard', function () {
     return view('auth/admin/admin-dashboard');
-});
+})->name('admin-dashboard');
 
 
-Route::get('/participant-view', function () {
+
+
+//participant menus
+
+Route::get('/admin-dashboard', function () {
+    return view('auth/admin/admin-dashboard');
+})->name('admin-dashboard');
+
+
+Route::get('/participant-dashboard', function () {
     return view('auth/participant/user-dashboard');
-});
+})->name('participant-dashboard');
 
 
-
-Route::get('/login-view', function () {
-    return view('auth/clogin');
-});
-
-
-Route::get('/app-view', function () {
-    return view('auth/passwords/creset');
-});
 
 
 

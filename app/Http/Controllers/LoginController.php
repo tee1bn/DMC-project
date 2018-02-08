@@ -78,17 +78,17 @@ class LoginController extends Controller
                 switch ($user->type_of_user_id) {
                     case '1':  #participant user
 
-                return redirect()->route('home');
+                return redirect()->route('participant-dashboard');
                        break;
 
                       case '2':  #subadmin user
 
-                return redirect()->route('home');
+                return redirect()->route('admin-dashboard');
                         break;
 
                      case '3':  #super admin user
 
-                return redirect()->route('home');
+                return redirect()->route('admin-dashboard');
                         break;
                     
                    
