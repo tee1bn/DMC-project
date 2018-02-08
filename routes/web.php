@@ -74,6 +74,10 @@ Route::get('/security-settings', function () {
 			    return view('auth/participant/security-settings');
 			})->name('participant-security-settings');
 
+Route::get('/admin-messages', function () {
+			    return view('auth/participant/admin-messages');
+			})->name('participant-admin-messages');
+
 			});
 
 
