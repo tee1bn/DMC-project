@@ -4,11 +4,13 @@
                 <h3>Participant</h3>
                 <ul class="nav side-menu">
                   <li><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
+
+
                   
                  <li><a><i class="fa fa-edit"></i> Account Settings <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Profile</a></li>
-                      <li><a href="#">Change Password</a></li>
+                      <li><a href="{{route('participant-profile')}}">Profile</a></li>
+                      <li><a href="{{route('participant-change-password')}}">Change Password</a></li>
                     </ul>
                   </li>
 
@@ -57,3 +59,46 @@
 
             </div>
             <!-- /sidebar menu -->
+            <?php
+
+
+
+
+
+
+      Route::get('/profile', function () {
+          return view('auth/participant/profile');
+      })->name('participant-profile');
+
+
+
+      Route::get('/change-password', function () {
+          return view('auth/participant/change-password');
+      })->name('participant-change-password');
+
+
+
+      Route::get('/balance', function () {
+          return view('auth/participant/e-wallet');
+      })->name('participant-balance');
+
+
+      Route::get('/funds-withdrawal', function () {
+          return view('auth/participant/funds-withdrawal');
+      })->name('participant-funds-withdrawal');
+
+         
+Route::get('/payment-history', function () {
+          return view('auth/participant/payment-history');
+      })->name('participant-payment-history');
+
+         
+Route::get('/withdrawal-history', function () {
+          return view('auth/participant/withdrawal-history');
+      })->name('participant-withdrawal-history');
+     
+Route::get('/security-settings', function () {
+          return view('auth/participant/security-settings');
+      })->name('participant-security-settings');
+
+      

@@ -116,7 +116,7 @@ public function beginPhoneVerification(User $user )
 
     try {
                 //Smpp http Url to send sms.
-                $live_url = "http://rslr.connectbind.com:8080/bulksms/bulksms?username=$gateway_username&password=$gateway_password&type=0&dlr=0&destination=2348123351819&source=$gateway_sender&message=$message";
+                $live_url = "http://rslr.connectbind.com:8080/bulksms/bulksms?username=$gateway_username&password=$gateway_password&type=0&dlr=0&destination=$phone&source=$gateway_sender&message=$message";
                 $parse_url = file($live_url);
                 //echo $parse_url[0];
             } catch (Exception $e) {
