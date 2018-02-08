@@ -34,7 +34,7 @@ Route::get('/login-view', function () {
 
 
 Route::get('/app-view', function () {
-    return view('auth/passwords/cemail');
+    return view('auth/passwords/creset');
 });
 
 
