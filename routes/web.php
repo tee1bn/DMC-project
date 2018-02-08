@@ -45,7 +45,7 @@ Route::get('/user-management', function () {
 //participant menus
 
 
-Route::group(array('prefix'=> '/participant'), function()
+Route::group(array('prefix'=> '/user'), function()
 {
 
 
