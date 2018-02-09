@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 use App\User;
 use App\EWallet;
+use App\Notification;
 
 
 
@@ -42,9 +43,24 @@ public function subscribe($user_id, $new_subscription_id)
      * 
      */
 
-public function userMessages($user_id)
+public function create_notification($user_id, $notification_body, $notification_title, $url)
 {
-	# code...
+
+
+
+Notification::create([
+                    'user_id'=> $user_id,
+                    'notification_body'=> $notification_body,
+                    'notification_title'=> $notification_title,
+                    'url' => $url
+                    ]);
+
+
+
+
+
+
+
 }
 
 
