@@ -84,8 +84,8 @@ try {
             'password' => bcrypt($data['password']),
         ]);
 
-Mail::to($data['email'])->send(new AccountVerificationEmail($email_verification_token));
-$this->beginPhoneVerification($user->id);
+// Mail::to($data['email'])->send(new AccountVerificationEmail($email_verification_token));
+// $this->beginPhoneVerification($user->id);
 
 return $user ;
     

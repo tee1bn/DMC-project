@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="../images/favicon.png" type="image/ico" />
+  <link rel="icon" href="{{asset('gentellela/images/images/favicon.png')}}" type="image/ico" />
 
     <title>@yield('title')</title>
 
@@ -64,7 +64,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>John Doe</h2>
+                <h2>{{Auth::user()->firstname}} {{Auth::user()->lastname}}</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -84,7 +84,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span style="color: #EEE" class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.php">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
                 <span style="color: #EEE" class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -103,7 +103,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{asset('gentellela/images/img.jpg')}}" alt="">John Doe
+                    <img src="{{asset('gentellela/images/img.jpg')}}" alt=""> {{Auth::user()->firstname}} {{Auth::user()->lastname}}
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -196,7 +196,7 @@
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <span class="mobillCntr">Available Funds</span>
-                    <span class="badge bg-green">10,000,000</span>
+                    <span class="badge bg-green">{{number_format( Auth::user()->ewallet->available_balance)}} </span>
                   </a>
                 </li>
                 <li class="">

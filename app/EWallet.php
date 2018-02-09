@@ -23,4 +23,8 @@ class EWallet extends Model
     protected $hidden = [
         
     ];
+
+
+
+    
 }

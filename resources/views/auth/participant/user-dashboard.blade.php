@@ -18,7 +18,7 @@
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-briefcase"></i></div>
-                  <div class="count">DMC Elite</div>
+                  <div class="count"> {{Auth::user()->subscription->type}}</div>
                   <h3>Your Plan</h3>
                   <br>
                 </div>

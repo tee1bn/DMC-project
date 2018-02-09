@@ -43,14 +43,22 @@
     </div>
   </div>
   
+
   <script>
 
     function phone_verification_form() {
-        
+phone = '{{Auth::user()->phone_verification_token}}' ;
+
+if(phone != 'verified'){
+
 $('#myModal').modal({
     backdrop: 'static',
     keyboard: false
-})
+});
+
+}
+
+
             }
 
 
