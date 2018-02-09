@@ -147,12 +147,13 @@
                         </span>
                         <span class="message">
                             {{substr($notification->notification_body, 0, 60)}}
+                            
                         </span>
                       </a>
                     </li>
 
                           @endforeach
-                         
+                          
                
                     <li>
                       <div class="text-center">
