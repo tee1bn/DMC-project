@@ -49,9 +49,10 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
              <div class="navbar nav_title" style="border: 0;background:#F7F7F7">
-              <a href="index.php" class="site_title">
-                <img src="../images/logoIcon.png" alt="DMC"> <span>
-                  <img src="../images/loginName.png" alt="Logo"></span></a>
+              <a href="#" class="site_title">
+                <img src="{{asset('gentellela/images/images/logoIcon.png')}}" alt="DMC"> <span>
+                  <img src="{{asset('gentellela/images/images/loginName.png')}}" alt="Logo">
+                </span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -209,3 +210,6 @@
           </div>
         </div>
         <!-- /top navigation -->
+
+        <!--modal for phone verification -->
+

@@ -1,3 +1,61 @@
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Phone Verification</h4>
+        </div>
+        <div class="modal-body">
+          <p>Kindly enter the Code that is sent to your phone</p>
+
+
+        <form method="post" action="{{route('verify-phone')}}">
+                        {{ csrf_field() }}
+            Enter Code:<input type="text" class="form-control" name="phone_verification_code">
+
+                    @if($errors->any())
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first() }}</strong>
+                                    </span>
+                    @endif
+
+               
+
+            <div class="clearfix"></div>
+        <br>
+        <div class="text-center">
+            <button type="submit" class="btn btn-default">Verify</button>
+            <button class="btn btn-default">Resend Code</button>
+        </div>
+        </form>
+        </div>
+
+    
+      </div>
+      
+    </div>
+  </div>
+  
+  <script>
+
+    function phone_verification_form() {
+        
+$('#myModal').modal({
+    backdrop: 'static',
+    keyboard: false
+})
+            }
+
+
+    setTimeout(phone_verification_form, 1000);
+
+
+</script>
    
 
     <!-- footer content -->

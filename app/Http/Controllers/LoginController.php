@@ -12,20 +12,19 @@ use  Auth;
 class LoginController extends Controller
 {
     
-    public function verify_phone($phone)
+    public function verify_phone(Request $request)
     {
+        print_r($phone =$request->phone_verification_code);
 
         if(Auth::user()->phone_verification_token == $phone){
 
             echo "owns phone";
         }else{
             echo "do not owns phone";
-
+    return redirect()->back()->withErrors(['Your Phone Could not be verified with the provided code']);
 
         }
-    // $user = User::where('phone_verification_token', $phone)->firstOrFail();
-    // $user->update(['phone_verification_token' => 'verified' ]);
-
+  
 
     }
 
