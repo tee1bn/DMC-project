@@ -139,7 +139,7 @@
 
                      @foreach(Auth::user()->notifications as $notification)
                       <li>
-                      <a href="{{$notification->notification_url}}">
+                      <a href="{{$notification->notification_url}} ">
                         <span class="image"><img src="{{asset('gentellela/images/img.jpg')}}" alt="Profile Image" /></span>
                         <span>
                           <span>{{$notification->notification_title}}</span>
