@@ -28,10 +28,10 @@ class Controller extends BaseController
      */
 
 public function subscribe($user_id, $new_subscription_id)
-{    
-     User::where('id', $user_id)->update([
-               'on_subscription_id' => $new_subscription_id
-     ]);       
+{	
+	User::where('id', $user_id)->update([
+			'on_subscription_id' => $new_subscription_id
+	]);		
 }
 
 
