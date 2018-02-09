@@ -500,7 +500,5 @@ public function notifications()
 {
       return $this->hasMany('App\Notifications' , 'user_id')->orderBy('created_at', 'ASC');
 }
-
-
     
 }

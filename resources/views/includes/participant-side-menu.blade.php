@@ -7,14 +7,14 @@
 
 
                   
-                 <li><a><i class="fa fa-edit"></i> Account Settings <span class="fa fa-chevron-down"></span></a>
+                 <li><a><i class="fa fa-cog"></i> Account Settings <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('participant-profile')}}">Profile</a></li>
                       <li><a href="{{route('participant-change-password')}}">Change Password</a></li>
                     </ul>
                   </li>
 
-                  <li><a><i class="fa fa-edit"></i> E-Wallet <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-money"></i> E-Wallet <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('participant-balance')}}">Balance</a></li>
                       <li><a href="{{route('participant-funds-withdrawal')}}">Funds Withdrawal</a></li>
@@ -23,7 +23,7 @@
                     </ul>
                   </li>
 
-                    <li><a><i class="fa fa-edit"></i>Referrals <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-refresh"></i>Referrals <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                       <li><a href="#">Upline</a></li>
                                       <li><a href="#">Downline</a></li>
@@ -31,7 +31,7 @@
                                     </ul>
                       </li>
 
-                  <li><a><i class="fa fa-edit"></i>DMC Hub <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-cart-arrow-down"></i>DMC Hub <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                       <li><a href="#">Training Hub</a></li>
                                       <li><a href="#">Business Hub</a></li>
@@ -42,9 +42,9 @@
                                       <li><a href="#">Leaderboard</a></li>
                                     </ul>
                       </li>
-                  <li><a href="{{route('participant-admin-messages')}}"><i class="fa fa-edit"></i> Messages</a></li>
+                  <li><a href="{{route('participant-admin-messages')}}"><i class="fa fa-envelope"></i> Messages</a></li>
 
-                  <li><a href="{{route('participant-security-settings')}}"><i class="fa fa-home"></i> Security Settings</a></li>
+                  <li><a href="{{route('participant-security-settings')}}"><i class="fa fa-cog"></i> Security Settings</a></li>
 
                  
                 </ul>
