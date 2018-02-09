@@ -1,16 +1,27 @@
-@extends('layouts/login-layout')
+@extends('layouts.app')
 
-@section('body')
-            <form action="{{ route('password.email') }}" method="post">
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Reset Password</div>
+
+                <div class="panel-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
                         {{ csrf_field() }}
- 
-              <h1>Reset Password</h1>
 
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-  <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-
-                            <div>
-                                <input id="email" type="email" class="form-control" placeholder="Enter your Email" name="email" value="{{ old('email') }}" required autofocus>
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -20,24 +31,17 @@
                             </div>
                         </div>
 
-
-				
-
-              <div>
-                <button class="btn btn-default submit" type="submit">     Send Password Reset Link</button>
-                <!-- <a class="reset_pass" href="{{ route('password.request') }}">Lost your password?</a> -->
-              </div>
-
-              <div class="clearfix"></div>
-
-           
-
-              <div class="separator">
-                <p class="change_link">New to site?
-                  <a href="{{route('register')}}" class="to_register"> Create Account </a>
-                </p>
-
-              
-
-
-  @endsection
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Send Password Reset Link
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
