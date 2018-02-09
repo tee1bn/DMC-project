@@ -69,7 +69,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-            // $email_verification_token = $data['phone'].rand(100000, 999999).$data['email'].$data['username'];
             $email_verification_token = md5($data['email']);
             $phone_verification_token = rand(100000, 999999) ;
 try {
@@ -86,7 +85,7 @@ try {
         ]);
 
 Mail::to($data['email'])->send(new AccountVerificationEmail($email_verification_token));
-$this->beginPhoneVerification($user);
+$this->beginPhoneVerification($user->id);
 
 return $user ;
     
@@ -101,8 +100,9 @@ return $user ;
     }
 
 
-public function beginPhoneVerification(User $user )
+public function beginPhoneVerification( $user_id )
 {
+    $user = User::where($user_id);
 
     $phone_verification_token = urlencode($user->phone_verification_token);
     $phone = urlencode($user->phone) ;

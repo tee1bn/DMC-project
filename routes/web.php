@@ -127,6 +127,9 @@ Route::get('/admin-dashboard', function () {
 
 Route::get('/verify-email/{email}', 'LoginController@verify_email')->name('verify-email');
 Route::post('/verify-phone/{phone?}', 'LoginController@verify_phone')->name('verify-phone');
+Route::get('/resend-phonecode/{user}', 'RegisterController@beginPhoneVerification')->name('resend-phonecode');
+
+
 Route::post('/custom-login', 'LoginController@custom_login')->name('login.custom');
 
 

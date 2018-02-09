@@ -7,7 +7,9 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+            @if(Auth::user()->phone_verification_token == 'verified')
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+          @endif
           <h4 class="modal-title">Phone Verification</h4>
         </div>
         <div class="modal-body">
@@ -30,7 +32,7 @@
         <br>
         <div class="text-center">
             <button type="submit" class="btn btn-default">Verify</button>
-            <button class="btn btn-default">Resend Code</button>
+            <a href="{{route('resend-phonecode', Auth::User()->id)}}"><button class="btn btn-default">Resend Code</button></a>
         </div>
         </form>
         </div>

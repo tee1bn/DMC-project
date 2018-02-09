@@ -18,7 +18,11 @@ class LoginController extends Controller
 
         if(Auth::user()->phone_verification_token == $phone){
 
-            echo "owns phone";
+            Auth::user()->update(['phone_verification_token'=> 'verified']);
+
+    return redirect()->back()->withErrors(['Your Phone has been verified succesfully']);
+
+
         }else{
             echo "do not owns phone";
     return redirect()->back()->withErrors(['Your Phone Could not be verified with the provided code']);
