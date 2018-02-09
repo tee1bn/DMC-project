@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EWallet extends Model
+class ManualPayment extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class EWallet extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'available_balance','balance', 
+        'reference','user_id', 'amount', 'status', 'type',  
     ];
 
     /**
@@ -23,4 +23,11 @@ class EWallet extends Model
     protected $hidden = [
         
     ];
+
+    public function getUserFullname()
+    {
+        $user = User::where('id', $this->user_id)->get(['firstname','lastname'])->first();
+        if ($user) return $user->firstname. ' '. $user->lastname;
+        else return 'N/A';
+    }
 }

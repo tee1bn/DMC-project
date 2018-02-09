@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EWallet extends Model
+class Transaction extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class EWallet extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'available_balance','balance', 
+        'transaction_id','user_id', 'plan_id', 'status','amount', 'ip_address','transaction_ref',   
     ];
 
     /**
