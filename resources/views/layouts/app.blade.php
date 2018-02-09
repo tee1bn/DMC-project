@@ -20,7 +20,7 @@
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -42,17 +42,51 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        @guest
+                        @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->firstname  }}
-                                      {{ Auth::user()->lastname  }} <span class="caret"></span>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="">
+                                            TrainingHub
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Business Hub
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Shop
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Business Accelerator
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Invest-4-me
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Vault
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Leaderboard
+                                        </a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -66,7 +100,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        @endguest
+                        @endif
                     </ul>
                 </div>
             </div>
